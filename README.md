@@ -8,3 +8,4 @@ In this project I created an app that uses functional React componentsthat manag
 + HTML
 + CSS
 
+You can view the app [here](https://serene-pasca-f03411.netlify.app/contacts)
