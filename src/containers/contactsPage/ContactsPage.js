@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ContactForm } from "../../components/contactForm/ContactForm";
-import { TileList } from "../../components/tileList/TileList";
+import { ContactForm } from "../../components/contactForm/ContactForm.js";
+import { TileList } from "../../components/tileList/TileList.js";
 
 export const ContactsPage = ({ contacts, addContact }) => {
   /*
