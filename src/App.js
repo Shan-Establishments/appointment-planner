@@ -58,21 +58,25 @@ function App() {
       </nav>
       <main>
         <Switch>
-          <Route exact path="/">
-            <Redirect to={ROUTES.CONTACTS} />
-          </Route>
-          <Route path={ROUTES.CONTACTS}>
-            {/* Added props to Contact Page */}
-            <ContactsPage contacts={contacts} addContact={addContact} />
-          </Route>
-          <Route path={ROUTES.APPOINTMENTS}>
-            {/* Added props to AppointmentsPage */}
-            <AppointmentsPage
-              appointments={appointments}
-              contacts={contacts}
-              addAppointment={addAppointment}
-            />
-          </Route>
+          <Route exact path="/" element={<Redirect to={ROUTES.CONTACTS} />} />
+          <Route
+            path={ROUTES.CONTACTS}
+            /* Added props to Contact Page */
+            element={
+              <ContactsPage contacts={contacts} addContact={addContact} />
+            }
+          />
+          <Route
+            path={ROUTES.APPOINTMENTS}
+            /* Added props to AppointmentsPage */
+            element={
+              <AppointmentsPage
+                appointments={appointments}
+                contacts={contacts}
+                addAppointment={addAppointment}
+              />
+            }
+          />
         </Switch>
       </main>
     </>
