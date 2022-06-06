@@ -18,7 +18,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
     Added contact info and cleared data
     if the contact name is not a duplicate
     */
-    if (!duplicate) {
+    if (duplicate) {
       addContact(name, phone, email);
       setName("");
       setPhone("");

@@ -1,5 +1,5 @@
 import React from "react";
-import { Tile } from "../tile/Tile";
+import { Tile } from "../tile/Tile.js";
 
 export const TileList = ({contacts, appointments}) => {
   const list = () => {
