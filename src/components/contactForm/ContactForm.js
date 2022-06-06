@@ -9,15 +9,15 @@ export const ContactForm = ({
   setEmail,
   handleSubmit,
 }) => {
-  const addName = ({target}) => {
+  const addName = ({ target }) => {
     setName(target.value);
-  }
-  const addPhone = ({target}) => {
+  };
+  const addPhone = ({ target }) => {
     setPhone(target.value);
-  }
-  const addEmail = ({target}) => {
+  };
+  const addEmail = ({ target }) => {
     setEmail(target.value);
-  }
+  };
   return (
     <form onSubmit={handleSubmit}>
       <input

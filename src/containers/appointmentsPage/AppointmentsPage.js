@@ -3,8 +3,8 @@ import { AppointmentForm } from "../../components/appointmentForm/AppointmentFor
 import { TileList } from "../../components/tileList/TileList.js";
 
 export const AppointmentsPage = ({
-  appointments,
   contacts,
+  appointments,
   newAppointment,
 }) => {
   /*
@@ -13,7 +13,7 @@ export const AppointmentsPage = ({
   */
   const [title, setTitle] = useState("");
   const [contact, setContact] = useState(
-    contacts.length > 0 ? contacts.name : ""
+    contacts.length > 0 ? contacts[0].name : ""
   );
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");

@@ -19,18 +19,18 @@ export function AppointmentForm({
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
-  const addTitle = ({target}) => {
+  const addTitle = ({ target }) => {
     setTitle(target.value);
-  }
-  const addDate = ({target}) => {
+  };
+  const addDate = ({ target }) => {
     setDate(target.value);
-  }
-  const addTime = ({target}) => {
+  };
+  const addTime = ({ target }) => {
     setTime(target.value);
-  }
-  const addContact = ({target}) => {
+  };
+  const addContact = ({ target }) => {
     setContact(target.value);
-  }
+  };
   return (
     <form onSubmit={handleSubmit}>
       <input
