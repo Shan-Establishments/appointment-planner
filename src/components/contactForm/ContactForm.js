@@ -13,23 +13,29 @@ export const ContactForm = ({
     <form onSubmit={handleSubmit}>
       <input
         value={name}
-        placeholder="Name"
-        onChange={(e) => setName(e.target.value)}
+        name="name"
+        type="text"
+        onChange={(n) => setName(n.target.value)}
+        placeholder="Contact Name"
         required
       />
 
       <input
         value={phone}
-        placeholder="Phone Number"
-        onChange={(e) => setPhone(e.target.value)}
-        pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
+        name="name"
+        type="tel"
         required
+        onChange={(p) => setPhone(p.target.value)}
+        placeholder="Phone Number"
+        pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
       />
 
       <input
         value={email}
-        placeholder="your@email.com"
+        type="email"
+        name="email"
         onChange={(e) => setEmail(e.target.value)}
+        placeholder="your@email.com"
         required
       />
 

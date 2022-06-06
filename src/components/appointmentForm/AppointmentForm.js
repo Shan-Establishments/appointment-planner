@@ -7,6 +7,7 @@ export function AppointmentForm({
   setTitle,
   contact,
   setContact,
+  date,
   setDate,
   time,
   setTime,
@@ -24,29 +25,35 @@ export function AppointmentForm({
       <input
         type="text"
         value={title}
-        placeholder="Title"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(t) => setTitle(t.target.value)}
+        name="title"
         required
+        placeholder="Appointment Title"
       />
 
       <input
-        type="text"
-        value={getTodayString()}
-        onChange={(e) => setDate(e.target.value)}
+        type="date"
+        name="date"
+        value={date}
+        onChange={(d) => setDate(d.target.value)}
+        min={getTodayString()}
         required
       />
 
       <input
         type="time"
+        name="title"
         value={time}
-        onChange={(e) => setTime(e.target.value)}
+        onChange={(t) => setTime(t.target.value)}
         required
       />
 
       <ContactPicker
+        value={contact}
+        name="contact"
+        placeholder="Appointment with"
         contacts={contacts}
-        contact={contact}
-        setContact={setContact}
+        onChange={(c) => setContact(c.target.value)}
       />
 
       <input type="submit" value="Submit" />

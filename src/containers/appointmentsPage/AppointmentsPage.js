@@ -12,7 +12,9 @@ export const AppointmentsPage = ({
   appointment info
   */
   const [title, setTitle] = useState("");
-  const [contact, setContact] = useState("");
+  const [contact, setContact] = useState(
+    contacts.length > 0 ? contacts.name : ""
+  );
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -33,22 +35,22 @@ export const AppointmentsPage = ({
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm
-          handleSubmit={handleSubmit}
           title={title}
-          setTitle={setTitle}
           contact={contact}
-          setContact={setContact}
           date={date}
-          setDate={setDate}
           time={time}
+          setTitle={setTitle}
+          setContact={setContact}
+          setDate={setDate}
           setTime={setTime}
           contacts={contacts}
+          handleSubmit={handleSubmit}
         />
       </section>
       <hr />
       <section>
         <h2>Appointments</h2>
-        <TileList lists={appointments} />
+        <TileList list={appointments} />
       </section>
     </div>
   );
