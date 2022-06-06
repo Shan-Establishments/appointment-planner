@@ -36,7 +36,7 @@ export const ContactForm = ({
         required
         onChange={addPhone}
         placeholder="Phone Number"
-        pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
+        pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
       />
 
       <input
