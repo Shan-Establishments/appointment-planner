@@ -44,7 +44,7 @@ export const AppointmentsPage = ({
           setDate={setDate}
           setTime={setTime}
           contacts={contacts}
-          handleSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         />
       </section>
       <hr />

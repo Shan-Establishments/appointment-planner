@@ -22,26 +22,24 @@ function App() {
   contacts and appointments
   */
   const addContact = (name, phone, email) => {
-    setContacts((lastState) => {
-      return [
-        ...lastState,
-        {
-          name,
-          phone,
-          email,
-        },
-      ];
-    });
+    setContacts([
+      ...contacts,
+      {
+        name: name,
+        phone: phone,
+        email: email,
+      },
+    ]);
   };
 
   const addAppointment = (title, contact, date, time) => {
-    setAppointments((lastState) => [
-      ...lastState,
+    setAppointments([
+      ...appointments,
       {
-        title,
-        contact,
-        date,
-        time,
+        title: title,
+        contact: contact,
+        date: date,
+        time: time,
       },
     ]);
   };
@@ -58,25 +56,21 @@ function App() {
       </nav>
       <main>
         <Switch>
-          <Route exact path="/" element={<Redirect to={ROUTES.CONTACTS} />} />
-          <Route
-            path={ROUTES.CONTACTS}
-            /* Added props to Contact Page */
-            element={
-              <ContactsPage contacts={contacts} addContact={addContact} />
-            }
-          />
-          <Route
-            path={ROUTES.APPOINTMENTS}
-            /* Added props to AppointmentsPage */
-            element={
-              <AppointmentsPage
-                appointments={appointments}
-                contacts={contacts}
-                addAppointment={addAppointment}
-              />
-            }
-          />
+          <Route exact path="/">
+            <Redirect to={ROUTES.CONTACTS} />
+          </Route>
+          <Route path={ROUTES.CONTACTS}>
+            {/* Added props to Contact Page */}
+            <ContactsPage contacts={contacts} addContact={addContact} />
+          </Route>
+          <Route path={ROUTES.APPOINTMENTS}>
+            {/* Added props to AppointmentsPage */}
+            <AppointmentsPage
+              contacts={contacts}
+              appointments={appointments}
+              addAppointment={addAppointment}
+            />
+          </Route>
         </Switch>
       </main>
     </>
@@ -84,4 +78,3 @@ function App() {
 }
 
 export default App;
- 
