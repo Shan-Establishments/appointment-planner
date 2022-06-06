@@ -5,7 +5,7 @@ import { TileList } from "../../components/tileList/TileList.js";
 export const AppointmentsPage = ({
   contacts,
   appointments,
-  newAppointment,
+  addAppointment,
 }) => {
   /*
   Defined state variables for 
@@ -23,7 +23,7 @@ export const AppointmentsPage = ({
     /*
     Added contact info and clear data  
     */
-    newAppointment(title, contact, date, time);
+    addAppointment(title, contact, date, time);
     setTitle("");
     setContact("");
     setDate("");
