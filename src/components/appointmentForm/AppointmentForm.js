@@ -19,13 +19,24 @@ export function AppointmentForm({
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
-
+  const addTitle = ({target}) => {
+    setTitle(target.value);
+  }
+  const addDate = ({target}) => {
+    setDate(target.value);
+  }
+  const addTime = ({target}) => {
+    setTime(target.value);
+  }
+  const addContact = ({target}) => {
+    setContact(target.value);
+  }
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
-        onChange={(t) => setTitle(t.target.value)}
+        onChange={addTitle}
         name="title"
         required
         placeholder="Appointment Title"
@@ -35,7 +46,7 @@ export function AppointmentForm({
         type="date"
         name="date"
         value={date}
-        onChange={(d) => setDate(d.target.value)}
+        onChange={addDate}
         min={getTodayString()}
         required
       />
@@ -44,7 +55,7 @@ export function AppointmentForm({
         type="time"
         name="title"
         value={time}
-        onChange={(t) => setTime(t.target.value)}
+        onChange={addTime}
         required
       />
 
@@ -53,7 +64,7 @@ export function AppointmentForm({
         name="contact"
         placeholder="Appointment with"
         contacts={contacts}
-        onChange={(c) => setContact(c.target.value)}
+        onChange={addContact}
       />
 
       <input type="submit" value="Submit" />
